@@ -61,6 +61,7 @@ public class KeywordStatsApp {
         keywordStatsDataStream.addSink(
                 ClickHouseUtil.getJdbcSink("insert into keyword_stats_2021(keyword,ct,source,stt,edt,ts) values(?,?,?,?,?,?)")
         );
+        System.out.println("这是dev_szp分支");
         env.execute();
 
 
