@@ -17,6 +17,8 @@ import java.sql.SQLException;
  * Author: Felix
  * Date: 2021/2/23
  * Desc: 操作ClickHouse的工具类
+ * 幂等写入
+ *
  */
 public class ClickHouseUtil {
     /**
