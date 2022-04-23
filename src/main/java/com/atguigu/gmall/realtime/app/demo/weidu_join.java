@@ -78,6 +78,7 @@ public class weidu_join {
                 "left join   dwd_display_log FOR SYSTEM_TIME AS OF t1.proctime AS t2\n" +
                 "on t1.page['page_id']=t2.page_id");
         tableEnv.toAppendStream(table, WeiduJoin.class).print();
+        System.out.println("test一下");
         env.execute();
 
 
