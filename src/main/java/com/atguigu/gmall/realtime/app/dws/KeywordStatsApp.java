@@ -6,6 +6,9 @@ import com.atguigu.gmall.realtime.bean.KeywordStats;
 import com.atguigu.gmall.realtime.common.GmallConstant;
 import com.atguigu.gmall.realtime.utils.ClickHouseUtil;
 import com.atguigu.gmall.realtime.utils.MyKafkaUtil;
+import org.apache.flink.runtime.state.StateBackend;
+import org.apache.flink.runtime.state.filesystem.FsStateBackend;
+import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.EnvironmentSettings;
@@ -20,15 +23,15 @@ public class KeywordStatsApp {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(4);
-         /*
+
         //1.3 检查点CK相关设置
         env.enableCheckpointing(5000, CheckpointingMode.AT_LEAST_ONCE);
         env.getCheckpointConfig().setCheckpointTimeout(60000);
         StateBackend fsStateBackend = new FsStateBackend(
-                "hdfs://hadoop202:8020/gmall/flink/checkpoint/ProductStatsApp");
+                "hdfs://hadoop103:8020/gmall/flink/checkpoint/ProductStatsApp");
         env.setStateBackend(fsStateBackend);
-        System.setProperty("HADOOP_USER_NAME","atguigu");
-        */
+        System.setProperty("HADOOP_USER_NAME","test");
+
         EnvironmentSettings settings = EnvironmentSettings.newInstance().inStreamingMode().build();
         StreamTableEnvironment tableEnvironment = StreamTableEnvironment.create(env, settings);
 
