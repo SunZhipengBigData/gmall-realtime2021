@@ -81,6 +81,7 @@ public class FlinkDemo3 {
                 "tumble(a.rowtime,interval '30'  second)");
         tableEnv.toAppendStream(table, FlinDemo.class).print();
         System.out.println("测试一下新账户");
+        System.out.println("再测试一下合并分支");
         env.execute();
 
     }
