@@ -83,6 +83,7 @@ public class FlinkDemo3 {
         System.out.println("测试一下新账户");
         System.out.println("再测试一下合并分支");
         System.out.println("在测试一下六六大顺即可将");
+        System.out.println("我不信在测试一下");
         env.execute();
 
     }
