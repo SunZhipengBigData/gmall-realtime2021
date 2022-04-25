@@ -80,6 +80,7 @@ public class FlinkDemo3 {
                 "group by  a.common['uid'],\n" +
                 "tumble(a.rowtime,interval '30'  second)");
         tableEnv.toAppendStream(table, FlinDemo.class).print();
+        System.out.println("测试一下新账户");
         env.execute();
 
     }
