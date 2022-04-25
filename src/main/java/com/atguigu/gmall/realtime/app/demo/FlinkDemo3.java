@@ -82,6 +82,7 @@ public class FlinkDemo3 {
         tableEnv.toAppendStream(table, FlinDemo.class).print();
         System.out.println("测试一下新账户");
         System.out.println("再测试一下合并分支");
+        System.out.println("在测试一下六六大顺即可将");
         env.execute();
 
     }
